@@ -1,0 +1,33 @@
+<!-- templates/summary.html -->
+{% extends "base.html" %}
+
+{% block title %}Summary{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-10">
+        <div class="card mb-4">
+            <div class="card-header">
+                <h3>Summary</h3>
+                <small class="text-muted">Reduced from {{ original_word_count }} to {{ summary_word_count }} words</small>
+            </div>
+            <div class="card-body">
+                <p>{{ summary }}</p>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header">
+                <h3>Original Text</h3>
+            </div>
+            <div class="card-body">
+                <p>{{ original_text }}</p>
+            </div>
+        </div>
+        
+        <div class="text-center mt-3">
+            <a href="{{ url_for('index') }}" class="btn btn-primary">Summarize Another Article</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
